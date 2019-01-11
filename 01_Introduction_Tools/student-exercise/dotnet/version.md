@@ -1,0 +1,1 @@
+* converted to .Net 4.6.2 (.Net core)
