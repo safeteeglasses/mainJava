@@ -15,7 +15,7 @@ actual command from other text in Unix documentation.
     refer to?
 ----
 
-<type your response here>
+<home directory>
 
 ----
 3.  A good habit to develop, especially while you're developing your skills on
@@ -24,7 +24,9 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
-<type or copy-paste the result here>
+/Users/thomasrichards/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld [master|✔] 
+15:29 $ 
 
 The present working directory displayed should match the directory you changed
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -40,7 +42,15 @@ changes directory, and the "pwd" command reflects this.
 ----
 
 $ ls -la
-<type or copy-paste the result here>
+otal 8
+drwxr-xr-x  5 thomasrichards  staff   170 Jan 14 14:17 .
+drwxr-xr-x  6 thomasrichards  staff   204 Jan 14 14:17 ..
+drwxr-xr-x  3 thomasrichards  staff   102 Jan 14 14:17 database
+-rwxr-xr-x  1 thomasrichards  staff  1091 Jan 14 14:17 pom.xml
+drwxr-xr-x  4 thomasrichards  staff   136 Jan 14 14:17 src
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld [master|✔] 
+15:30 $ 
+
 
 
 ----
@@ -48,14 +58,15 @@ $ ls -la
     Exercise 4 represent?
 ----
 
-<type your answer here>
+.. indicates parent moves to parent dir 
+. indicates current directory i am in. take me to where i am 
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+.        ..       database pom.xml  src
 
 
 ----
@@ -95,7 +106,9 @@ $ less database/pagila.sql
 
 You are encouraged to make "less" part of your standard command line toolkit.
 
-<type or copy-paste the first five lines of either file here>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
 
 ----
 9.  This is good time to create a Git snapshot of your progress.  Usually,
