@@ -122,13 +122,32 @@ You are encouraged to make "less" part of your standard command line toolkit.
 Did you remember to save "introduction-to-tools-exercise.txt"?
 
 $ git status
-<type or copy-paste the result here>
+15:51 $ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ../introduction-to-tools-exercises.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld [master|✚ 1] 
+15:51 $ 
+
 
 $ git add -A
-<type or copy-paste the result here>
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld [master|●1] 
+15:53 $ 
 
 $ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+15:53 $ git commit -m "good stopping point"
+[master 7afcd61] good stopping point
+ 1 file changed, 19 insertions(+), 6 deletions(-)
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld [master ↑·1|✔] 
+15:54 $ 
+
 
 Note, you do not need to push this commit up to BitBucket at this time. The
 typical Git workflow is to make many small commits to your local repo while
@@ -145,7 +164,11 @@ along, and then at the end.
 
 $ cd src/main/java/com/techelevator
 $ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+15:57 $ pwd
+/Users/thomasrichards/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator [master ↑·1|✔] 
+15:58 $ 
+
 
 
 ----
@@ -153,7 +176,7 @@ $ <enter command to display present working directory>
     path?
 ----
 
-<type your answer here>
+absolute
 
 
 ----
@@ -162,7 +185,10 @@ $ <enter command to display present working directory>
 ----
 
 $ <enter command to list all files and directories including dot-files and dot-directories>
-<type or copy-paste the result here>
+Helloworld.java
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator [master ↑·1|✔] 
+16:00 $ 
+
 
 
 ----
@@ -177,7 +203,11 @@ The "cp" parameters are the name of the source file followed by the name of the
 destination file.
 
 $ <enter command to list all files and directories in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+16:07 $ ls
+Helloworld.java        Helloworld.java.backup
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator [master ↑·1|…1] 
+16:07 $ 
+
 
 
 ----
@@ -191,7 +221,10 @@ The "mv" parameters are the existing name of the file followed by the new name
 of the file.
 
 $ <enter command to list all files and directories in order to confirm the renaming of the file>
-<type or copy-paste the result here>
+16:09 $ ls
+Helloworld.java      Helloworld.java.copy
+✔ ~/workspace/ThomasRichards-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator [master ↑·1|…1] 
+16:09 $ 
 
 
 ----
