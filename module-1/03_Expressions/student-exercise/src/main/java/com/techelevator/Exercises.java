@@ -111,7 +111,7 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-		if (negative == false) {
+		if (!negative) {
 			
 	
 		if (a > 0 && b < 0) {
@@ -121,7 +121,7 @@ public class Exercises {
 			return true;		
 		}
 		}
-		if (negative == true) {
+		if (negative) {
 			
 		
 		if (a < 0 && b < 0) { 
@@ -565,6 +565,19 @@ public class Exercises {
 	 inOrder(1, 1, 2, true) → true
 	 */
 	public boolean inOrder(int a, int b, int c, boolean bOk) {
+		
+		boolean bGTa = b > a;
+		boolean cGTb = c > b;
+		
+		if (bGTa && cGTb && !bOk) {
+			return true;
+		}
+		else {
+			if (bOk && cGTb) {
+				return true;
+			}
+		}
+			
 		return false;
 	}
 
