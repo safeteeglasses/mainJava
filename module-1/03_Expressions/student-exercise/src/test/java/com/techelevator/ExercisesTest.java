@@ -594,5 +594,4 @@ public class ExercisesTest {
 		assertEquals("Input: luckySum(13, 13, 3)", 0, exercises.luckySum(13, 13, 3));
 		assertEquals("Input: luckySum(13, 13, 13)", 0, exercises.luckySum(13, 13, 13));
 	}
-
 }
