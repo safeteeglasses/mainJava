@@ -1,40 +1,11 @@
 package com.techelevator;
 
-<<<<<<< HEAD
-import java.util.Scanner; // Include the Java code to support the Scanner
-=======
 import java.util.Scanner;  // Include the Java code to support Scanner
->>>>>>> 5bdf12b840a714488509491cbf9f3600d07d22f5
 
 public class Lecture {
 
 	public static void main(String[] args) {
 		
-<<<<<<< HEAD
-		Scanner keyBoard = new Scanner(System.in); // Defining the Scanner object to access keyboard
-		
-		int aNumber = 0; // Variable to hold keyboard input
-		int anotherNumber = 0;
-		double pctg = 0.0;
-		
-		
-		String aLine = ""; //Variable to hold line from keyboard
-		
-		System.out.println("Please could you be so kind and enter a number? :)");
-		aLine = keyBoard.nextLine(); //get a line from keyboard and put it in variable aLine
-		aNumber = Integer.parseInt(aLine); //Converts a string to an integer
-		
-		System.out.println("Please enter another number");
-		aLine = keyBoard.nextLine();
-		anotherNumber = Integer.parseInt(aLine);
-		
-		aNumber += anotherNumber;
-		
-		
-		
-		System.out.println("Sum is: " +  aNumber);
-		
-=======
 		Scanner keyBoard = new Scanner(System.in);  // Define a Scanner object to access keyboard
 		
 		int aNumber = 0;   // variable to hold keyboard input
@@ -63,7 +34,7 @@ public class Lecture {
 		System.out.println("Pct is: " + result);
 
 		/*
-		 * The String solit() method may be used to divide a string into individual pieces based 
+		 * The String split() method may be used to divide a string into individual pieces based 
 		 * on a delimiter/separator character passed to split.
 		 * 
 		 * The split method returns an array of Strings where each element is one of the pieces of the string.
@@ -117,12 +88,11 @@ public class Lecture {
 		for (int i=0; i<nums.length;i++) {         // Loop through the array of ints
 			sum += nums[i];                        // Add an int array element to sun
 		}
-		double avg = sum / nums.length;            // Calculate the average of the numbers	
+		double avg = sum / (double) nums.length;   // Calculate the average of the numbers	
 		
 		System.out.println("\nThe sum of your numbers is: " + sum);
 		
 		System.out.printf("The average of your number is: %.3f", avg);  // print avg with 3-decimal places
->>>>>>> 5bdf12b840a714488509491cbf9f3600d07d22f5
 		
 // We will talk about System.out.printf() in our next session
 // if you want to know more about it before then, watch this video: https://www.youtube.com/watch?v=g_BsIuRVfvk  

@@ -10,16 +10,17 @@ public class DecimalToBinary {
 		 
 		 int number = 0;
 		 String aLine = "";
-		 
+		 int multipleNumbers1 = 0;
+		 String [] multipleNumbers = aLine.split(" ");  
 		 
 		 
 		 
 	        System.out.println("Please enter in a series of decimal values (separated by spaces):");
 	        number = keyBoard.nextInt();
+	        multipleNumbers1 = Integer.parseInt(aLine);
 	        
 	        
-	        
-	        if (number < 0) {
+	        if (multipleNumbers1 < 0) {
 	            System.out.println("Error: Not a positive integer");
 	        } else { 
 
