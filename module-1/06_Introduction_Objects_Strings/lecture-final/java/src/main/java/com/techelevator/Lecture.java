@@ -31,6 +31,10 @@ public class Lecture {
 		String name = "Lincoln";
 		char first = name.charAt(0);   // 'L'
 		char fourth = name.charAt(3);  // 'c'
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 137310b3ea743820f40657890ff4ce7583ca5e07
 		System.out.println(name);
 		System.out.println(first);
 		System.out.println(fourth);
@@ -63,13 +67,29 @@ public class Lecture {
 		 * trim
 		 */
 		
+		System.out.println("ends with lo : "+hello.endsWith("lo"));
+		System.out.println("start with H : "+hello.startsWith("H"));
+		System.out.println("where is the e: "+hello.indexOf("e"));
+		System.out.println("where is the l: "+hello.indexOf("l"));
+		System.out.println("where is the last l: "+hello.lastIndexOf("l"));
+		System.out.println("# chars is: "+hello.length());
+		System.out.println("substring(6,11): "+hello.substring(6, hello.length()-1));
+		
+		String city = "Cleveland             ";
+		System.out.println("# chars is: "+city.length());
+		System.out.println("# chars (trimmed) is: "+city.trim().length());
+		
 		System.out.println();
 		System.out.println("**********************");
 		System.out.println("****** EQUALITY ******");
 		System.out.println("**********************");
 		System.out.println();
 		
+<<<<<<< HEAD
 		char[] helloArray = new char[] { 'H', 'e', 'l', 'l', 'o' }; //char literal is in ' '
+=======
+		char[] helloArray = new char[] { 'H', 'e', 'l', 'l', 'o' };  // char literal is enclosed in aposts
+>>>>>>> 137310b3ea743820f40657890ff4ce7583ca5e07
 		String hello1 = new String(helloArray);
 		String hello2 = new String(helloArray);
 
@@ -95,6 +115,7 @@ public class Lecture {
 			System.out.println(hello1+" is not equal to "+hello2);
 		}
 		
+<<<<<<< HEAD
 		String aLine = new String();
 		Scanner keyBoard = new Scanner(System.in);
 		int sum = 0;
@@ -109,6 +130,30 @@ public class Lecture {
 			sum += Integer.parseInt(numsAsStrings[i]);
 		}
 		System.out.println("Sum of values is: " + sum);
+=======
+		/* Use the split() to process multiple values
+		 * entered from the keyboard
+		 */	
+		
+		String aLine = new String();           // String to hold line from keyboard
+		Scanner kb = new Scanner(System.in);   // object to represent the keyboard
+		int sum = 0;                           // sum of the numbers
+		
+		System.out.println("Enter three integers separated by commas : ");
+		aLine = kb.nextLine();
+		System.out.println("You entered: " + aLine);    // get a line from the keyboard
+		
+		String[] numsAsStrings = aLine.split(",");      // split the sections of the line based on comma
+		                                                // split() returns an array of String with each
+		                                                // element a section of the String between commas
+		
+		for(int i = 0; i < numsAsStrings.length; i++) { // loop through the String array of values produced by .split()
+			sum += Integer.parseInt(numsAsStrings[i]);  // convert the curremt element to an int and add to sum
+		}
+		System.out.println("Sum of values is: " + sum); // display the value in sm
+		
+		
+>>>>>>> 137310b3ea743820f40657890ff4ce7583ca5e07
 		
 	}
 }

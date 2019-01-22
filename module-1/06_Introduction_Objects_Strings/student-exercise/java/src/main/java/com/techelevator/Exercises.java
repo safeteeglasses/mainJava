@@ -420,12 +420,12 @@ public class Exercises {
 	 stringSplosion("ab") → "aab"
 	 */
 	public String stringSplosion(String str) {
-		String sillyString = "";
+		String sillyStringSplosion = "";
 		
 		for(int i = 0; i < str.length()+ 1; i++) {
-			sillyString += str.substring(0, i);
+			sillyStringSplosion += str.substring(0, i);
 		}
-		 	return sillyString;
+		 	return sillyStringSplosion;
 	}
 
 	/*
@@ -447,7 +447,15 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
+		String removeTheX = "";
+		for( int i = 0; i<str.length()-1; i++) {
+			if(str.charAt(i) == 'x') {
+				removeTheX = str.substring(1, i);
+				
+			}
+		}
 		return null;
+		
 	}
 
 	/*
