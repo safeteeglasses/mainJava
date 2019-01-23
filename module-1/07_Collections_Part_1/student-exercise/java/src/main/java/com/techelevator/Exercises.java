@@ -110,13 +110,14 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		int largestValue = 0;
-		for(Integer result : integerList) {
-			if (result > largestValue) {
-				largestValue = result;
+		int largestValue = 0; 				//I'm returning an int. Just don't know what yet
+		
+		for(Integer result : integerList) { //taking integerList and looping into result
+			if (result > largestValue) {    //If the number dropped into result > largestValue
+				largestValue = result;		//It becomes largestValue
 			}
 		}
-		return largestValue;
+		return largestValue;				//It return largestValue
 	}
 	
 	/*
@@ -145,16 +146,16 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		Integer toFind = new Integer(intToFind);
+		//Does not need a wrapper because you are directly comparing int to int.
 		
-		int counter = 0;
-		for(Integer number : integerList) {
-			if(number.equals(toFind)) {
-				counter++;
+		int counter = 0;					//Need a Variable that will become the value to return true/false
+		for(Integer number : integerList) { //For Loop through the list named integerList and assigning to number
+			if(number == intToFind) {		//compare the wrapped int to list numbers
+				counter++;					//Everytime the same shows up counter increases
 			}
 			
 		}
-			if(counter >= 2) {
+			if(counter >= 2) {				//If counter is great or equal to 2 returns true
 				return true;
 			}
 		return false;
@@ -173,19 +174,19 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		List<String> result = new ArrayList<String>();
-		for(Integer number : integerArray) {
-			if(number % 3 ==0 && number % 5 == 0) {
-				result.add("FizzBuzz");
+		List<String> result = new ArrayList<String>();//creating empty array list that will contain strings
+		for(Integer number : integerArray) {	      //For Loop that runs integerArray and assigns into number
+			if(number % 3 ==0 && number % 5 == 0) {   //take number and see if it's a multiple of 3 & 5
+				result.add("FizzBuzz");				  //If it is add string "FizzBuzz" to result list
 			}
-			else if(number % 3 ==0){
-				result.add("Fizz");
+			else if(number % 3 ==0){				  //If it's multiple of just 3
+				result.add("Fizz");					  //add string "Fizz" to result list
 			}
-			else if(number % 5 == 0){
-				result.add("Buzz");
+			else if(number % 5 == 0){				  //If it's multiple of just 5
+				result.add("Buzz");					  //add string "Buzz" to result list
 			}
 			else
-			{result.add(number.toString());
+			{result.add(number.toString());			  //neither multiple of 3 nor 5 convert number to string and add it to result
 				
 			}
 		}
