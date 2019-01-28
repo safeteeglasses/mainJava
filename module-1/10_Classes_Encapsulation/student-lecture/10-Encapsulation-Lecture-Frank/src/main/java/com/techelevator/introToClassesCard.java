@@ -43,6 +43,18 @@ public class introToClassesCard {
 		System.out.println("card3 face up: " + card3.isFaceUp());
 		System.out.println("----------------------------------------------------------------");
 
+		PlayingCard card4 = new PlayingCard("Hearts", 12);
+		PlayingCard card5 = new PlayingCard("Hearts", 12);
+		System.out.println("----------------------------------------------------------------");
+		System.out.println("card4 is " + card4);
+		System.out.println("card5 is " + card5);
+		
+		if (card4.equals(card5)) {
+			System.out.println("Cards are equal");
+		}
+			else {
+				System.out.println("Cards are not equal");
+			}
 		
 	}
 }

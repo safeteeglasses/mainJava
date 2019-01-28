@@ -109,7 +109,7 @@ public String getColor() {
 /**
  * @return the faceUp
  */
-public boolean isFaceUp() {
+public boolean isFaceUp() { //get method for boolean is called "isName"
 	return faceUp;
 }
 
@@ -141,6 +141,19 @@ private void determineColor(String suit) {
 		}
 	}
 }
+//add toString() - convert a PlayingCard to a String
+public String toString() {
+	return "The " + value + " of " + suit + " is " + color + " and " + "" + faceUp;
+}
+public boolean equals(PlayingCard otherCard) {
+	if(this.value == otherCard.value && this.suit.equals(otherCard.suit) && this.color.equals(otherCard.color)) {
+		return true;
+	}
+		return false;
+}
+		
+	
+
 
 
 // method to display the values in a PlayingCard
