@@ -38,7 +38,7 @@ public class RoundingExample
      *     
      *     Note: in all the above examples 'n' is the minimum size
      *     
-     *     The number of values provided must match the number of placeholdes in the model line to avoid errors
+     *     The number of values provided must match the number of placeholders in the model line to avoid errors
      *     
      *     Link to quick reference for printf(): 
      *     
@@ -62,7 +62,7 @@ public class RoundingExample
    * To use DecimalFormat:
    * 
    * 1. Define a new DecimalFormat object passing it a string representing the desired format.
-   *    Put # where you want a digit and any editting characters desired (, .) in the place you want them.
+   *    Put # where you want a digit and any editing characters desired (, .) in the place you want them.
    *    
    * 2. Use the DecimalFormat object your created in #1 to invoke the format() method passing it the vale
    *    to be formatted.

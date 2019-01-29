@@ -7,6 +7,7 @@ import java.util.List;
 public class CardDeck {
 	
 	private List<PlayingCard> deck = new ArrayList<PlayingCard>();
+	
 	private static int numberOfDecks = 0;
 	
 	public CardDeck() { //Default Constructor (ctor) 

@@ -31,7 +31,7 @@ public class BigDecimalExamples {
 		System.out.println("bNum = " + bNum); // BigDecimal will convert to a String
 		System.out.println("------------------------------------------------");
 		System.out.println("            aNum.equals(bNum) is: " + aNum.equals(bNum)); 
-		System.out.println("       aNum.eauals(bNum.abs() is: " + aNum.equals(bNum.abs())); 
+		System.out.println("       aNum.equals(bNum.abs() is: " + aNum.equals(bNum.abs())); 
 		System.out.println("              aNum.toString() is: " + aNum.toString()); 
 		System.out.println("         aNum.aNum.intValue() is: " + aNum.intValue());
 		System.out.println("           aNum.doubleValue() is: " + aNum.doubleValue());
