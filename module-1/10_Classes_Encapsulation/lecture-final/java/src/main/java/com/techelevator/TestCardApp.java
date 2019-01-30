@@ -87,8 +87,8 @@ public class TestCardApp {
 		  
 		  myPokerHand.show();
 		  System.out.println(myPokerHand.rankHand());
-		  */
-		  for (int i = 1; i < 100000; i++)
+*/
+		  for (int i = 1; i < 10000; i++)
 		  { 
 		  numDeals++;
 		  myPokerHand.clearHand(); 
@@ -100,11 +100,12 @@ public class TestCardApp {
 		 
 //		  System.out.println("------------------------------------------------------------");
 //		  myPokerHand.show(); 
-		  if (myPokerHand.rankHand() == PokerHandRanking.FOUROFAKIND)
+/*		  if (myPokerHand.rankHand() == PokerHandRanking.FOUROFAKIND)
 		  {
 		  System.out.println(myPokerHand.rankHand());
 		  myPokerHand.show();
 		  }
+*/
 		  
 		  if (myPokerHand.rankHand() == PokerHandRanking.STRAIGHT) {
 		  System.out.println(myPokerHand.rankHand());

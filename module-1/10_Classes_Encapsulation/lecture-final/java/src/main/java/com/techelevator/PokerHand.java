@@ -101,7 +101,7 @@ public class PokerHand  extends CardHand {
 		if ((getHand().get(1).getIntValue()) == ((getHand().get(0).getIntValue())+1)
 		 && (getHand().get(2).getIntValue()  == ((getHand().get(1).getIntValue())+1)
 		 && (getHand().get(3).getIntValue()  == ((getHand().get(2).getIntValue())+1)
-		 && (getHand().get(3).getIntValue()  == ((getHand().get(4).getIntValue())+1))))) {
+		 && (getHand().get(4).getIntValue()  == ((getHand().get(3).getIntValue())+1))))) {
 			return true;
 		}
 		else
