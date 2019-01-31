@@ -1,7 +1,6 @@
 
 package com.techelevator;
 
-import com.techelevator.PlayingCard.CardValue;
 
 public class PokerHand  extends CardHand {
 	public final int NUMBERCARDSINHAND = 5;
@@ -101,7 +100,7 @@ public class PokerHand  extends CardHand {
 		if ((getHand().get(1).getIntValue()) == ((getHand().get(0).getIntValue())+1)
 		 && (getHand().get(2).getIntValue()  == ((getHand().get(1).getIntValue())+1)
 		 && (getHand().get(3).getIntValue()  == ((getHand().get(2).getIntValue())+1)
-		 && (getHand().get(3).getIntValue()  == ((getHand().get(4).getIntValue())+1))))) {
+		 && (getHand().get(4).getIntValue()  == ((getHand().get(3).getIntValue())+1))))) {
 			return true;
 		}
 		else
@@ -134,11 +133,22 @@ public class PokerHand  extends CardHand {
 		
 		if (hasFlush()) {
 			handRank = PokerHandRanking.FLUSH;
+			if (hasStraight()) {
+				handRank = PokerHandRanking.STRAIGHTFLUSH;
+			}
 		}
-		
 		if (hasStraight()) {
 			handRank = PokerHandRanking.STRAIGHT;
+			if (hasFlush()) {
+				handRank = PokerHandRanking.STRAIGHTFLUSH;
+			}
 		}
+		if(handRank == PokerHandRanking.STRAIGHTFLUSH
+			&& this.aHand.get(0).getValue() == PlayingCard.CardValue.NINE) {
+			handRank = PokerHandRanking.ROYALSTRAIGHTFLUSH;
+		}
+		
+		
 		return handRank;
 	}
 }
