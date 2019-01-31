@@ -88,7 +88,7 @@ public class TestCardApp {
 		  myPokerHand.show();
 		  System.out.println(myPokerHand.rankHand());
 */
-		  for (int i = 1; i < 10000; i++)
+		  for (int i = 1; i < 1000000; i++)
 		  { 
 		  numDeals++;
 		  myPokerHand.clearHand(); 
@@ -107,11 +107,16 @@ public class TestCardApp {
 		  }
 */
 		  
-		  if (myPokerHand.rankHand() == PokerHandRanking.STRAIGHT) {
+		  if (myPokerHand.rankHand() == PokerHandRanking.STRAIGHTFLUSH) {
 		  System.out.println(myPokerHand.rankHand());
 		  myPokerHand.show();
 		   done = true;
 		  } 
+		  if (myPokerHand.rankHand() == PokerHandRanking.ROYALSTRAIGHTFLUSH) {
+			  System.out.println(myPokerHand.rankHand());
+			  myPokerHand.show();
+			   done = true;
+			  } 
 		  }
 //		   System.out.println("Number of Deals: " + numDeals);
 		 
