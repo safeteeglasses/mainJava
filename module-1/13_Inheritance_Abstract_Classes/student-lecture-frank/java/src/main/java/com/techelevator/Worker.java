@@ -4,7 +4,9 @@ package com.techelevator;
 // Generic Worker class to be used as a base class for all type of workers
 //****************************************************************************************
 
-public class Worker {
+public abstract class Worker implements PaidEmployees{ //abstract class - cannot be instantiated by itself 
+							                           //can only be a base class
+													   //require methods of the PaidEmployee interface
 	//****************************************************************************************
 	// Data members / Instance Data
 	//****************************************************************************************
@@ -39,11 +41,12 @@ public class Worker {
 		return lastName;
 	}
 	//****************************************************************************************
-	// Need to define "dummy" method that will be overridden by subclasses
+	// Define an abstract method which requires the subclass to override
+	// if a subclass wants to inherit this class it must provide abstract methods
 	//****************************************************************************************
 		
-		public double calculateWeeklyPay(int numHoursWorked) {
-			return -1;
-		}
+	//public abstract double calculateWeeklyPay(int numHoursWorked); //abstract method only has method signature
+			
+		
 
 }

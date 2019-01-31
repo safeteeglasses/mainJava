@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class SalaryWorker extends Worker {
+public final class SalaryWorker extends Worker {// final says this class cannot be a base class
 	
 	//****************************************************************************************
 	// Data members / Instance Data
@@ -32,5 +32,7 @@ public class SalaryWorker extends Worker {
 	public double calculateWeeklyPay(int numHoursWorked) {
 		return annualSalary / 52;
 	}
-
+	public double calculateIncomeTax(double pay) {
+		return pay * taxRate;
+	}
 }
