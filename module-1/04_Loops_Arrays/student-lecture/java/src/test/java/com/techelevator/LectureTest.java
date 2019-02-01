@@ -5,12 +5,12 @@ import static org.junit.Assert.*;
 
 public class LectureTest {
 	
-    Lecture exercises = new Lecture();
+    Lecture exercises = new Lecture(); // give us access to all the data and methods in this class
     
     @Test
     public void testReturnArray() {
         assertArrayEquals(new int[] {80,8080,443}, exercises.returnArray());
-    }
+    }							//expected result,    method-to-test
 
     @Test
     public void testReturnFirstElement() {
