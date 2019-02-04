@@ -16,6 +16,9 @@ public class KataFizzBuzzTest {
 		assertEquals("String does not return FizzBuzz", ("FizzBuzz"), KataFizzBuzz.fizzBuzz(15));
 		assertEquals("String does not return FizzBuzz", ("FizzBuzz"), KataFizzBuzz.fizzBuzz(30));
 	}
-	 
+	public void multiple_of_only_3() {
+		assertEquals("String does not return Fizz", ("Fizz"), KataFizzBuzz.fizzBuzz(9));
+		assertEquals("String does not return Fizz", ("Fizz"), KataFizzBuzz.fizzBuzz(303));
+	}
 	
 }
