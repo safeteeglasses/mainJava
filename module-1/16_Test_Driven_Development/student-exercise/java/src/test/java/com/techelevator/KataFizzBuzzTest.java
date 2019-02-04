@@ -20,7 +20,7 @@ public class KataFizzBuzzTest {
 	@Test
 	public void multiple_of_only_3() {
 		assertEquals("String does not return Fizz", ("Fizz"), KataFizzBuzz.fizzBuzz(9));
-		assertEquals("String does not return Fizz", ("Fizz"), KataFizzBuzz.fizzBuzz(303));
+		assertEquals("String does not return Fizz", ("Fizz"), KataFizzBuzz.fizzBuzz(33));
 	}
 	@Test
 	public void multiple_of_only_5() {
@@ -30,5 +30,10 @@ public class KataFizzBuzzTest {
 	@Test
 	public void passed_in_0() {
 		assertEquals("String does not return empty String", ("0"), KataFizzBuzz.fizzBuzz(0));
+	}
+	@Test
+	public void passed_in_greater_than_100() {
+		assertEquals("String does not return empty String", (""), KataFizzBuzz.fizzBuzz(101));
+		assertEquals("String does not return empty String", (""), KataFizzBuzz.fizzBuzz(102));
 	}
 }
