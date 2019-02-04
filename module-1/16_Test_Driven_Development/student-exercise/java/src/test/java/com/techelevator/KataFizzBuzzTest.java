@@ -7,9 +7,15 @@ public class KataFizzBuzzTest {
 
 	
 	@Test 
-	public void returns_int_1() {
+	public void returns_int_not_multiple_of_3_or_5() {
 		assertEquals("String does not return 1", ("1"), KataFizzBuzz.fizzBuzz(1));
+		assertEquals("String does not return 2", ("2"), KataFizzBuzz.fizzBuzz(2));
+		assertEquals("String does not return 4", ("4"), KataFizzBuzz.fizzBuzz(4));
 	}
-	
+	public void multiple_of_3_and_5_returns_fizzbuzz() {
+		assertEquals("String does not return FizzBuzz", ("FizzBuzz"), KataFizzBuzz.fizzBuzz(15));
+		assertEquals("String does not return FizzBuzz", ("FizzBuzz"), KataFizzBuzz.fizzBuzz(30));
+	}
+	 
 	
 }
