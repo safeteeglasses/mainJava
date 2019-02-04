@@ -17,10 +17,13 @@ public class KataFizzBuzz {
 		if (num % 3 == 0 && num % 5 == 0) {
 			return "FizzBuzz";
 		}
-		if (num % 3 == 0) {
+		if ((num +"").contains("3") && ((num + "").contains("5"))) {
+			return "FizzBuzz";
+		}
+		if (num % 3 == 0 || ((num + "").contains("3"))) {
 			return "Fizz";
 		}
-		if (num % 5 == 0) {
+		if (num % 5 == 0 || ((num + "").contains("5"))) {
 			return "Buzz";
 		}
 		
@@ -28,5 +31,7 @@ public class KataFizzBuzz {
 		
 		return "" + num + "";
 	}
-
+	
+	
+	
 }

@@ -36,4 +36,16 @@ public class KataFizzBuzzTest {
 		assertEquals("String does not return empty String", (""), KataFizzBuzz.fizzBuzz(101));
 		assertEquals("String does not return empty String", (""), KataFizzBuzz.fizzBuzz(102));
 	}
+	@Test
+	public void Contains_a_5() {
+		assertEquals("String does not return Buzz", ("Buzz"), KataFizzBuzz.fizzBuzz(56));
+	}
+	@Test
+	public void Contains_a_3() {
+		assertEquals("String does not return Fizz", ("Fizz"), KataFizzBuzz.fizzBuzz(13));
+	}
+	@Test
+	public void Contains_a_3_and_a_5() {
+		assertEquals("String does not return Fizz", ("FizzBuzz"), KataFizzBuzz.fizzBuzz(53));
+	}
 }
