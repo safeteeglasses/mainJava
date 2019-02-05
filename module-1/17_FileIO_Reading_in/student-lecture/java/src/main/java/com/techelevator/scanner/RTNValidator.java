@@ -13,7 +13,8 @@ public class RTNValidator {
 		printApplicationBanner();
 		
 		File inputFile = getInputFileFromUser();
-		try(Scanner fileScanner = new Scanner(inputFile)) {
+		Scanner fileScanner = new Scanner(inputFile);
+		try {
 			while(fileScanner.hasNextLine()) {
 				String line = fileScanner.nextLine();
 				String rtn = line.substring(0, 9);
@@ -24,7 +25,10 @@ public class RTNValidator {
 					else {
 						System.out.println(" - Valid");
 				}
-			}
+			} 
+		}catch (Exception e) {
+			fileScanner.close();
+			
 		}
 	}
 
@@ -41,7 +45,7 @@ public class RTNValidator {
 		System.out.print("Please enter path to input file >>> ");
 		String path = userInput.nextLine();
 		System.out.println("Path entered: "+ path + "\n");
-		File inputFile = new File(path);
+		File inputFile = new File(path);  // define a File object to represent the file
 		if(inputFile.exists() == false) { // checks for the existence of a file
 			System.out.println(path+" does not exist");
 			System.exit(1); // Ends the program
