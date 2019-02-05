@@ -10,7 +10,7 @@ public class WordSearch {
 		//File wordSearch = new File("alices_adventures_in_wonderland.txt");
 		//File shortStory = new File("short-story.txt");
 		int lineCounter = 0;
-		
+		Scanner keyboard = new Scanner(System.in);
 		File wordSearch = getInputFileFromUser();
 		//Scanner fileScanner = new Scanner(wordSearch);
 		
@@ -20,6 +20,7 @@ public class WordSearch {
 			System.out.println("What is the search word you are looking for?");
 			Scanner wordInput = new Scanner(System.in);
 			String word = wordInput.nextLine();
+			
 			
 			while(file.hasNextLine()) {
 				String line = file.nextLine();
