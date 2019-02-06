@@ -22,28 +22,17 @@ Your code will be evaluated based on the following criteria:
 
 Create a program to write out the result of FizzBuzz (1 to 300) to a file called `FizzBuzz.txt`. The file should be written out to the same directory as this README file.
 
-* If the number is divisible by 3 or contains a 3, print “Fizz”
-* If the number is divisible by 5 or contains a 5, print “Buzz”
-* If the number is divisible by 3 and 5, print “FizzBuzz”
-* Otherwise print the number.
-
-To run the application, the following command should be run at the root of this directory:
-
-```
-mvn exec:java -Dexec.mainClass="com.techelevator.FizzWriter"
-```
-
-Expected Output:
-```
-FizzBuzz.txt has been created.
-```
+* If the number is divisible by 3 or contains a 3, output “Fizz”
+* If the number is divisible by 5 or contains a 5, output “Buzz”
+* If the number is divisible by 3 and 5, output “FizzBuzz”
+* Otherwise output the number
 
 Things to keep in mind:
 
-* When you run the command `wc -l FizzBuzz.txt`, the result should be `300     300 FizzBuzz.txt`
-* Use the `less` command or your favorite text editor to verify the contents of the file are what you expect them to be. **The contents of the file _will_ be evaluated based on the requirements specified above.**
+* When you lok at the file in an editor (Eclipse, VS Code), the result should be `300     300 FizzBuzz.txt`
 * A new file should be created each time the application is run.
 * There is not any user interaction in this application. (The application should run and terminate. You should not need to press a key to stop the application.)
+* Consider displaying a message on the screen when the program starts and ends so you can verify it actually ran.
 
 ### File Splitter (Challenge)
 
@@ -51,12 +40,6 @@ Develop an application that takes a significantly large input file and splits it
 
 In order to determine how many files need to be produced, ask the user for the maximum amount of lines that
 should appear in each output file.
-
-To run the application, the following command should be run at the root of this directory:
-
-```
-mvn exec:java -Dexec.mainClass="com.techelevator.FileSplitter"
-```
 
 Sample Input/Output:
 ```
@@ -113,7 +96,7 @@ Things to keep in mind:
        3 ./input-16.txt
       50 total
     ```
-* Use the `less` command or your favorite text editor to verify the contents of the file are what you expect them to be.
+* Use Eclipse, the `less` command, your favorite text editor to verify the contents of the file are what you expect them to be.
 * The input file name should be the prefix (the first part of the file name) followed by a dash (`-`), then the number of the current file, and finally ending with the file extension of the input file. For instance, if the name of the file was big-old-file.md, the file names should be big-old-file-1.md, big-old-file-2.md, etc.
 * Output files will be written to the directory the input file is in.
 * The application should run and terminate. You should not need to press a key to stop the application.
