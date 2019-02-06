@@ -26,10 +26,7 @@ public class KataFizzBuzz {
 		if (num % 5 == 0 || ((num + "").contains("5"))) {
 			return "Buzz";
 		}
-		
-		
-		
-		return "" + num + "";
+			return "" + num + "";
 	}
 	
 	
