@@ -2,7 +2,7 @@ package com.techelevator.menu;
 /***********************************************************************************
  * This will demonstrate how to use the Menu process given to
  * students in the Tech Elevator Java bootcamp:
- * 2
+ * 
  * 
  * The menu process requires a array of Strings containing the options to be 
  * presented to the user.  So any array of Strings can be used for the options.
@@ -12,7 +12,7 @@ package com.techelevator.menu;
  * 
  * General use directions:
  *   
- * 1. Define one array of Strings to hold options for each Menu.
+ * 1. Define an array of Strings to hold options for each Menu.
  *    
  *    
  * 2. Call the getChoiceFromOptions() method in the provided Menu class,
@@ -42,7 +42,7 @@ public class UseMenuCLI {  // Class representing the MenuCLI process to be used
 			
 	public static void main(String[] args) {
 
-		Menu menu = new Menu(System.in, System.out);  // Define Menu object with input and output sources (keyboard, screen)		UseMenuCLI mainMenu = new UseMenuCLI(menu);	  // Define a UseMenuClI object to handle menus
+		Menu menu = new Menu(System.in, System.out);  // Define Menu object with input and output sources (keyboard, screen)		
 
 		/********************************************************************************
 		 * Define String constants for the menu option text/choices
@@ -50,7 +50,7 @@ public class UseMenuCLI {  // Class representing the MenuCLI process to be used
 		 * to follow and use
 		 *******************************************************************************/ 
 
-		final String   MAIN_MENU_OPTION_1    = "Option 1 Description";
+		final String   MAIN_MENU_OPTION_1    = "Choice 1 Description";
 		final String   MAIN_MENU_OPTION_2    = "Option 2 Description";
 		final String   MAIN_MENU_OPTION_3    = "Option 3 Description";
 		final String   MAIN_MENU_OPTION_EXIT = "Exit";
@@ -78,6 +78,7 @@ public class UseMenuCLI {  // Class representing the MenuCLI process to be used
 												"Josh",
 												"Craig",
 												"Dan",
+												"Brett",
 												"End Process"
 												};
 		
@@ -104,6 +105,10 @@ public class UseMenuCLI {  // Class representing the MenuCLI process to be used
 			
 			switch (choice)
 			{
+			case "Brett":{
+				// process for option "Brett" choice - good place for a method call
+			    break;
+			}
 			case "Joe":{
 				// process for option "Joe" choice - good place for a method call
 			    break;
@@ -144,10 +149,11 @@ public class UseMenuCLI {  // Class representing the MenuCLI process to be used
 		 *          to it for the option the user picked    
 		 ****************************************************************************/ 
 		
-		String choice = (String)menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 		
 		shouldLoop = true;
 		while(shouldLoop) {         // Loop while loop control variable is true
+		
+		String choice = (String)menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 		
 		/****************************************************************************
 		 * Examine choice made and process accordingly
