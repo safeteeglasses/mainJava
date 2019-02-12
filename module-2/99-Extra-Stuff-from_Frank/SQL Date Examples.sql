@@ -13,7 +13,7 @@ select  date('12/31/2019') - date('12/01/2019')  as days_in_December
 ;
 -- add/subtract intervals to dates
 select to_char((current_date + interval '5 days'), 'mm/dd/yyyy')as five_days_from_now 
-     , to_char((current_date + interval '1 day'),  'mm/dd/yyyy')as one_month_from_now
+     , to_char((current_date + interval '1 month'),  'mm/dd/yyyy')as one_month_from_now
      , to_char((current_date - interval '1 day'),  'mm/dd/yyyy')as yesterdays_date
      , current_date + interval '2 years' + interval '1 month'   as two_years_and_1_month_from_now
 ;
