@@ -132,10 +132,13 @@ group by continent
 
 -- What is the sum of the population of cities in each state in the USA ordered by state name
 
-
-
+Select district, sum(population)
+From city
+Where countrycode = 'USA'
+group by district
+order by 2
+;
 -- What is the average population of cities in each state in the USA ordered by state name
-
 
 --------------------------------------------------------------------------------------------------------
 -- SUBQUERIES - Using the result from one query (inner query) in another query (outer query)
