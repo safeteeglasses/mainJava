@@ -4,6 +4,9 @@
 --
 -- round(value, #-dec-places)  - round a numeric value to the number of decimal places given
 -- trunc(value, #-dec-places)  - truncate a numeric value to the number of decimal places given
+-- 
+-- round() does not work with double precsion data (float) 
+-- double precsion values must be cast to a type such as numeric in order to round it
 --
 -- ceil(value)  - return the next numerically higher integer value to value given
 -- floor(value) - return the next numerically lower integer value to the value given
@@ -16,6 +19,8 @@
 -- (highest per captia GNP in world: 37459.26)
 
 	SELECT
+				,(population / surfacearea)             as Pop_Density    -- double precsion result (int / float)
+				,round( cast((population / surfacearea) as numeric),2) as Pop_Density_rounded    -- double precsion result (int / float)
 	             (gnp * 1000000) / population           AS per_capita_gnp
 	     , round((gnp * 1000000) / population,2)        AS rounded_up
 	     , trunc((gnp * 1000000) / population,2)        AS truncated
