@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------------------------------------------
--- Referential Inegrity - Enforcement of the Parent-Dependent relatiohnship
---                        ie. Ensure that every foreign key value has a matching primary key
+-- Referential Integrity - Enforcement of the Parent-Dependent relatiohnship
+--                         ie. Ensure that every foreign key value has a matching primary key
 --
 -- Constraints are rules regarding the data that must be complied with:
 --
