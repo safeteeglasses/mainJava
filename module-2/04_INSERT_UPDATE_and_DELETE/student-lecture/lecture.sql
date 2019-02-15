@@ -57,14 +57,46 @@
 -- INSERT
 
 -- 1. Add Klingon as a spoken language in the USA
+Begin transaction;
+
+insert into countrylanguage 
+(countrycode, language, isofficial, percentage)
+values('USA', 'Klingon', true, 10)
+;
+Select *
+from countrylanguage
+where countrycode = 'USA'
+; 
+rollback;
 
 -- 2. Add Klingon as a spoken language in Great Britain
-
+Begin transaction;
+insert into countrylanguage
+(countrycode, language, isofficial, percentage)
+values ('GBR', 'Klingon', true, 10) 
+;
+Select *
+from countrylanguage
+where countrycode = 'GBR'
+;
+Commit
+;
 
 -- UPDATE
 
 -- 1. Update the capital of the USA to Houston
+Begin Transaction;
+Update country 
+Set capital = (Select id from city where name = 'Houston')
 
+where code = 'USA'
+;
+select capital
+from country
+where code = 'USA'
+;
+rollback
+;
 -- 2. Update the capital of the USA to Washington DC and the head of state
 
 
