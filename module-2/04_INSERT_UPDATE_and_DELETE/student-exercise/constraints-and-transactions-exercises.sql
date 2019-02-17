@@ -80,7 +80,7 @@ commit
 ;
 
 Update film_category
-set category_id = 17
+set category_id = (Select category_id from category where name = 'Mathmagical')
 Where film_id in (select film_id 
                   from film 
                   where title 
@@ -109,7 +109,19 @@ Where rating = 'G'
 commit
 ;
 -- 7. Add a copy of "Euclidean PI" to all the stores.
-
+Begin Transaction;
+insert into inventory (store_id, film_id)
+Select store_id, (Select film_id From film Where title = 'EUCLIDEAN PI')
+From store
+;
+Select inventory_id
+From inventory i 
+join film f
+on f.film_id = i.film_id
+where f.title = 'EUCLIDEAN PI'
+;
+Commit
+;
 -- 8. The Feds have stepped in and have impounded all copies of the pirated film, 
 -- "Euclidean PI". The film has been seized from all stores, and needs to be 
 -- deleted from the film table. Delete "Euclidean PI" from the film table. 
