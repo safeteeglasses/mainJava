@@ -14,9 +14,9 @@ public class DAOExample {
 		worldDataSource.setUrl("jdbc:postgresql://localhost:5432/world");
 		worldDataSource.setUsername("postgres");
 		worldDataSource.setPassword("postgres1");
-		
-		CityDAO dao = new JDBCCityDAO(worldDataSource);
-		
+// Use the DAO created for City table to access\/Update the City table data
+		CityDAO dao = new JDBCCityDAO(worldDataSource); // Instantiate a CityDao object
+														// access to City DAO stuff
 		City smallville = new City();
 		smallville.setCountryCode("USA");
 		smallville.setDistrict("KS");
@@ -26,6 +26,7 @@ public class DAOExample {
 		dao.save(smallville);
 		
 		City theCity = dao.findCityById(smallville.getId());
+		System.out.println("Id: " + theCity.getId() + " " + smallville.getName());
 		
 	}
 
