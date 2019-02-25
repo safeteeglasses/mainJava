@@ -63,6 +63,27 @@ insert into countrylanguage
 (countrycode, language, isofficial, percentage)
 values('USA', 'Klingon', true, 10)
 ;
+
+Begin Transaction;
+
+insert into reservation
+(site_id, name, from_date, to_date, create_date)
+values(?, ?, ?, ?, CURRENT_TIMESTAMP);
+
+SELECT reservation_id
+FROM RESERVATION
+Where from_date = ? and to_date = ?
+;
+
+rollback
+; 
+
+SELECT *
+FROM site;
+
+
+
+
 Select *
 from countrylanguage
 where countrycode = 'USA'

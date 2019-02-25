@@ -18,7 +18,8 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 public class JDBCCityDAOIntegrationTest {
 
-	private static final String TEST_COUNTRY = "XYZ";
+	private static final String TEST_COUNTRY = "XYZ";  // constant that may be used in any test
+													   // global constant (global variable)
 	
 	/* Using this particular implementation of DataSource so that
 	 * every database interaction is part of the same database
@@ -44,7 +45,7 @@ public class JDBCCityDAOIntegrationTest {
 	public static void closeDataSource() throws SQLException {
 		dataSource.destroy();
 	}
-	
+	// run before each test is done
 	@Before
 	public void setup() {
 		String sqlInsertCountry = "INSERT INTO country (code, name, continent, region, surfacearea, indepyear, population, lifeexpectancy, gnp, gnpold, localname, governmentform, headofstate, capital, code2) VALUES (?, 'Afghanistan', 'Asia', 'Southern and Central Asia', 652090, 1919, 22720000, 45.9000015, 5976.00, NULL, 'Afganistan/Afqanestan', 'Islamic Emirate', 'Mohammad Omar', 1, 'AF')";
@@ -64,11 +65,11 @@ public class JDBCCityDAOIntegrationTest {
 	public void save_new_city_and_read_it_back() throws SQLException {
 		City theCity = getCity("SQL Station", "South Dakota", "USA", 65535);
 		
-		dao.save(theCity);
+		dao.save(theCity); // test the save() in JDBCCityDAO
 		City savedCity = dao.findCityById(theCity.getId());
 		
-		assertNotEquals(null, theCity.getId());
-		assertCitiesAreEqual(theCity, savedCity);
+		assertNotEquals(null, theCity.getId());  // ensure the row is actually in the table
+		assertCitiesAreEqual(theCity, savedCity);// verify the City we retrieved from the table has the same value as what we entered
 	}
 
 	@Test
@@ -78,10 +79,10 @@ public class JDBCCityDAOIntegrationTest {
 		dao.save(theCity);
 		List<City> results = dao.findCityByCountryCode(TEST_COUNTRY);
 		
-		assertNotNull(results);
-		assertEquals(1, results.size());
-		City savedCity = results.get(0);
-		assertCitiesAreEqual(theCity, savedCity);
+		assertNotNull(results);					   // Ensure the row is actually in the table	
+		assertEquals(1, results.size());           // Ensure there is only one row
+		City savedCity = results.get(0);		   // Get the first City object in the List returned by findCityByCountryCode
+		assertCitiesAreEqual(theCity, savedCity);  // Verify the City retrieved is the City entered
 	}
 	
 	@Test
