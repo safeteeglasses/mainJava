@@ -1,10 +1,10 @@
 html {
   font: 96px Courier;
-  color: white;
+  color: forestgreen;
 }
 p {
   font: 36px Helvetica;
-  color: black;
+  color: blue;
 }
 .container {
   background-color: black;
