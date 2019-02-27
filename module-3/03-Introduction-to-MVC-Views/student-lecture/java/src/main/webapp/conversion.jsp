@@ -11,7 +11,7 @@ library --%>
 <html>
 	<head>
 		<title>MVC Views Part 1 - Example: Metric Conversions</title>
-		
+<!-- CSS to style our page -->
 		<style>
 			
 			tr {

@@ -1,3 +1,6 @@
+<!-- Connect to JSTL language components -->
+<!-- prefix identifies the prefix you will use for JSTL statements -->
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
