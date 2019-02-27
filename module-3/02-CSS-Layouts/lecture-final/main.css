@@ -1,0 +1,95 @@
+:root {                                    /* define rules for document root            */
+    --orange: #f7921c;                   /* define variable called --orange           */    
+    --grey: #f2f2f4;                     /* define variable called --grey             */
+    --dark-grey: rgba(50, 53, 62, 0.05); /* define variable called --dark-grey        */
+    --black: rgba(60, 60, 60, 1);        /* define variable called --black            */
+  }
+  * {                                    /* define rules for all tags (global)           */
+    font-family: "Roboto Slab", serif ;  /* set font families for document               */
+  }
+  html {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%23f7921c' fill-opacity='0.14' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+  }
+img {                     /* define rules for <img> tags                                  */                     
+  width: 100%;            /* tell images to fill their container rather than be full size */
+}
+a {                             /* define rules for <a>                                   */
+  text-decoration: none;        /* remove any text decorations                            */
+  text-transform: uppercase;    /* convert text to upper case                             */
+  color: var(--black);          /* set text color to --black variable value               */
+}
+body {                                           /* define rules for <body>               */
+  display: grid;                                 /* use grid layout for body              */
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;/* define a 6-col grid                   */
+  grid-template-areas:                           /* assign names to grid columns          */
+  ". header        header        nav   nav   ."  /* assign names to columns in 1st row    */
+  ". main          main          main  main  ."  /* assign names to columns in 2nd row    */
+  ". fall-festival fall-festival store store ."; /* assign names to columns in 3rd row    */
+  grid-gap: 10px;                                /* set gap between cols and rows to 10px */     
+}
+header {                    /* define rules for <header>                                  */
+  grid-area: header;        /* assign to grid area named "header"                         */
+}
+nav  {                      /* define rules for <nav>                                     */
+ grid-area: nav;            /* assign to grid area named "nav"                            */
+}
+main {                      /* define rules for <main>                                    */
+  grid-area: main;          /* assign to grid area named "main"                           */
+}
+
+#order-now{                 /* define rules for id="store"                                */
+  grid-area: fall-festival; /* assign to grid area named "fall-festival"                  */
+}
+#store {                    /* define rules for id="store"                                */
+  grid-area: store;         /* assign to grid area named "store"                          */
+}
+nav ul {                            /* define rules for <ul> in <nav>                     */    
+  display: flex;                    /* use flex box layout                                */
+  justify-content: space-between;   /* place content evenly with space between items      */
+  margin: 0;                        /* no margins - all four margins set to 0             */
+  padding: 0;                       /* no padding - all four padding areas set to 0       */
+}  
+
+nav ul li {                  /* define rules for <li> in <nav> so they look like buttons   */
+  list-style: none;          /* remove bullets from list items                             */
+  width: 30%;                /* set nav list item width to 30% (about 1/3 of container)    */
+  line-height: 50px;         /* set nav list item height to 50 pixels                      */
+  background: var(--orange); /* set nav list item background to --orange variable value    */
+  text-align: center;        /* center nav list item text                                  */
+  border-radius: 5px;        /* slightly round corners                                     */
+}
+nav {
+  display: flex;              /* define rules for <nav> tag                                */
+  flex-direction: column;     /* specify nav items show be shown as columns                */
+  justify-content: flex-end;  /* align nav items along main axis toward the end            */
+}
+main {                   /* define rules for <main> tag                                    */
+  display: flex;         /* use flex box layout for main content                           */
+}
+main img {               /* define rules for <main> <img> tag                              */
+  width: 30%;            /* set image width to 30%                                         */
+  height: 350px;         /* set image height 350 pixels                                    */
+  object-fit: cover;     /* specify that image should be resized to fit container by       */
+                         /*     keeping aspect ratio and cropping sides to fit container   */
+}
+main .content {          /* define rules for <main class="content"                         */
+  margin-left: 20px;     /* set left margin to 20 pixels                                   */
+}
+
+#store  h3{              /* define rules for id="store", <h3> tag                           */
+text-align: center;      /* center text                                                     */
+} 
+#store a {               /* define rules for id="store", <a> to look like a button          */
+  display: block;        /* set display type to block - strtech left-right as far as it can */
+  text-align: center;    /* alignment for text in "Store" button                            */
+  background-color: var(--black); /* fill color for "Store" button                          */
+  width: 25%;            /* width of box for "Store" button                                 */
+  line-height: 50px;     /* Height of box for "Store" button"                               */
+  border-radius: 5px;    /* slightly rounded border                                         */
+  color: var(--grey);    /* text color                                                      */
+  margin: 0 auto;        /* 0-top/bottom margin  auto(center) left/right margin             */
+}
+main, #order-now, #store {  /* define main tag, id="order-now" and id="store" elements      */                            */
+  background-color: var(--grey);
+  padding: 10px;
+}
