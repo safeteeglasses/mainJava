@@ -12,3 +12,67 @@ html {
     font-size: 16px;
 }
 
+
+header {
+    grid-area:  header
+}
+header img{
+    width: 200px;
+}
+#student-grid {
+    display: grid;
+    grid-template-column: 3fr 3fr 3fr;
+    grid-template-areas:
+
+    "quote quote image"
+    "profile profile contact"
+    "exp exp exp";
+
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
+}
+#student-picture {
+    grid-area: image;
+    text-align: center;
+}
+#student-contact {
+    grid-area: contact;
+    text-align: center;
+    font-style: italic;
+}
+#student-quote {
+    grid-area: quote;
+}
+#student-profile {
+    grid-area: profile;
+}
+body{
+    background-color: rgba(192, 192, 192, 0.1);
+    margin: 0 8% 0 8%;
+}
+div > img {
+    border-radius:  50%;
+}
+h1 {
+    color: var(--grey);
+}
+h3 {
+    color: var(--blue);
+}
+#student-picture img {
+    width: 270px;
+}
+#experience {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    grid-area: exp;
+    column-gap: 20px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+#experience div {
+    width: 300px;
+    display: inline-block;
+}
