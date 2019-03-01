@@ -14,13 +14,23 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
+            
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Table Layout</a></li>
         </ul>
         
     </nav>
     <section id="main-content">
-
+    	<h1>Toy Department</h1>
+    
+    	<c:forEach var="name" items="${productList}">
+    		<li><img src="img/${name.getImageName()}"></li>
+    		<li>${name.name}</li>
+    		<li>by ${name.manufacturer}</li>
+    		<li>${name.price}</li>
+    		<li>${name.weightInLbs}</li>
+    		<li>${name.averageRating}</li>
+		</c:forEach>
        
 
     </section>
