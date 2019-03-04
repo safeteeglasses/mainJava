@@ -57,3 +57,36 @@ section {
 	border-radius: 7px;
 	list-style: none;
 }
+#star  {
+	width: 20%;
+}
+.price {
+	color: #a52a2a;
+	font-size: 20px;
+}
+#listToy {
+	width: 100%;
+	
+}
+th {
+	text-align: left;
+	width: 95px;
+	
+}
+#main-content-table {
+	width: 98%;
+	
+	
+	
+	
+	
+}
+#star-rating {
+	width: 100%;
+}
+.grey-background {
+	background-color: gray;
+}
+table, th, td {
+	border-collapse: collapse;
+}
