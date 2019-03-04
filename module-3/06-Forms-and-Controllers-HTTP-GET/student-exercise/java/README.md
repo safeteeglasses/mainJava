@@ -1,6 +1,6 @@
 # Exercises
 
-All exercises will be using the dvdstore database. DALs are already created, except for the Customer Search, where you will fill in the data access methods.
+All exercises will be using the dvdstore database. DAOs are already created, except for the Customer Search, where you will fill in the data access methods.
 
 ## Actor Search
 
