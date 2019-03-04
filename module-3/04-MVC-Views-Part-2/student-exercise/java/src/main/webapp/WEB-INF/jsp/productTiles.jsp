@@ -3,7 +3,7 @@
 <c:import url="/WEB-INF/jsp/header.jsp"/>
 
 <c:set var="count" value="0"></c:set>
-
+<h1>Toy Department</h1>
     <section id="main-content">
     	
 			<c:forEach var="name" items="${productList}">

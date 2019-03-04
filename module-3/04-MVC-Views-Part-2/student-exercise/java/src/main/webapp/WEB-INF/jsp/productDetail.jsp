@@ -3,9 +3,8 @@
 <c:import url="/WEB-INF/jsp/header.jsp"/>
 	<section>
 
-	<c:forEach var="name" items="${product}">
-		<li>${name.productList}</li>
-	</c:forEach>
+	<li>${productDetail.imageName}</li>
+	
 	</section>
 </body>
 </html>

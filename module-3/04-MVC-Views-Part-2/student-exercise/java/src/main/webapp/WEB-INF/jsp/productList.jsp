@@ -1,9 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="count" value="0"></c:set>
-
+	
     	<c:import url="/WEB-INF/jsp/header.jsp"/>
+    	<h1>Toy Department</h1>
    	  	<section>
+   	  	
     		<c:forEach var="name" items="${productList}">
     		<li><a href="productDetail?productId=${count}"><img id="toy" src="img/${name.imageName}"></a></li>
     		<c:set var="count" value="${count + 1}"></c:set>
