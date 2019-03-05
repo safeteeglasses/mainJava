@@ -7,7 +7,9 @@
    	  	<section>
    	  	
     		<c:forEach var="name" items="${productList}">
-    		<li><a href="productDetail?productId=${count}"><img id="toy" src="img/${name.imageName}"></a></li>
+    		<c:url var="url"
+    			value="productDetail?productId=${name.productId}"/>
+    		<li><a href="${url}"><img id="toy-list" src="img/${name.imageName}"></a></li>
     		<c:set var="count" value="${count + 1}"></c:set>
     		<li><span style="font-size: 24px">${name.name}</span><c:if test="${name.topSeller == true}"><span style="color: red"> BEST SELLER!</span></c:if></li>
     		<li>by ${name.manufacturer}</li>

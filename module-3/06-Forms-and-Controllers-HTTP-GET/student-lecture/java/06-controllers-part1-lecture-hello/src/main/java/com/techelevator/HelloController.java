@@ -46,9 +46,9 @@ public class HelloController {
 	 * javax.servlet.http.HttpServletRequest */
 	public String displayGreeting(HttpServletRequest request) {
 		
-		String name = request.getParameter("name");
-		Greeter greeter = new Greeter(name);
-		request.setAttribute("greeting", greeter.getGreeting());
+		String name = request.getParameter("name");		// get value from the name= on the query string
+		Greeter greeter = new Greeter(name);			// instantiate a Greeter object using the value from query strong
+		request.setAttribute("greeting", greeter.getGreeting());	// add the value from getGreeting() as an entry in the request map with the key greeting
 		
 		/* Controller methods can return a variety of types of values, 
 		 * but we will be using `String`.  The value of the returned 

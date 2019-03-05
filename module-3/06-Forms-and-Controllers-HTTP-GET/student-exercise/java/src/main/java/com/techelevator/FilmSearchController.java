@@ -17,12 +17,17 @@ public class FilmSearchController {
     @Autowired
     FilmDao filmDao;
 
+    @RequestMapping("/filmSearch")
     public String showFilmSearchForm() {
-        return null;
+        return "filmList";
     }
 
-    public String searchFilms() {
-        return null;
+    @RequestMapping(path="/filmList", method=RequestMethod.GET)
+    public String searchFilms(@RequestParam String minLength, String maxLength, String genre, ModelMap model) {
+    							model.put("films", filmDao.getFilmsBetween
+    									(genre, Integer.parseInt(minLength), 
+    											Integer.parseInt(maxLength))); 
+        return "filmList";
     }
     
     

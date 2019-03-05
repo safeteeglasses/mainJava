@@ -3,6 +3,9 @@ body {
 	background-color: #212121;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
 		sans-serif;
+	padding-left: 100px;
+	padding-right: 100px;
+	
 }
 
 body, header, nav {
@@ -12,14 +15,17 @@ body, header, nav {
 header {
 	background-color: #0099CC;
 	color: white;
-	padding: 10px 10px;
+	padding: 0px 0px;
+	width: 111%;
+	
 }
 
 nav {
 	background-color: #8DC63F;
 	margin-bottom: 20px;
-	padding: 5px;
+	padding: 0px;
 	height: 50px;
+	width: 111%;
 }
 
 nav ul {
@@ -48,7 +54,7 @@ nav li a:hover {
 section {
 	clear: both;
 	display: block;
-	width: 80%;
+	width: 110%;
 	margin: 20px auto;
 	vertical-align: top;
 	text-align: center;
@@ -56,6 +62,7 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 	list-style: none;
+	
 }
 #star  {
 	width: 20%;
@@ -74,12 +81,7 @@ th {
 	
 }
 #main-content-table {
-	width: 98%;
-	
-	
-	
-	
-	
+	width: 100%;
 }
 #star-rating {
 	width: 100%;
@@ -89,4 +91,28 @@ th {
 }
 table, th, td {
 	border-collapse: collapse;
+}
+#detail-image {
+	display: flex;
+}
+#main-content-detail {
+	display: flex-box;
+	text-align: left;
+	padding-left: 30px;
+	margin: 0px
+}
+#description {
+	font-size: 20px;
+	padding-left: 0 px;
+	text-align: left;
+	
+}
+#toy {
+	width: 100%;
+}
+#main-content {
+	
+	
+	
+	
 }

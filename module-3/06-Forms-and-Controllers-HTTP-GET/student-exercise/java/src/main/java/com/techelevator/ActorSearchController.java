@@ -17,14 +17,14 @@ public class ActorSearchController {
 	@Autowired
 	private ActorDao actorDao;
 
-	/* What request mapping do we want here */
+	@RequestMapping("/")
 	public String showSearchActorForm() {
-		return null;
+		return "actorList";
 	}
 
-	/* What about here? */
-	public String searchActors(/* What arguments go here to get parameters from the page? */) {
-		/* Call the model and pass values to the jsp */
-		return null;
+	@RequestMapping(path="/actorList", method=RequestMethod.GET)
+	public String searchActors(@RequestParam String name, ModelMap modelHolder) {
+		modelHolder.put("actors", actorDao.getMatchingActors(name));
+		return "actorList";
 	}
 }

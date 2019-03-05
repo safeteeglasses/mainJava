@@ -2,7 +2,7 @@
 
 
 <c:import url="/WEB-INF/jsp/header.jsp"/>
-<c:set var="count" value="0"></c:set>
+
 <h1>Toy Department</h1>
     <section id="main-content-table">
     	<table>
@@ -10,8 +10,9 @@
 			<tr>
 			<th></th>
 			<c:forEach var="picture" items="${productList}">
-			<td><a href="productDetail?productId=${count}"><img id="listToy" src="img/${picture.imageName}"></a></td>
-			<c:set var="count" value="${count + 1}"></c:set>
+			<c:url var="url"
+    			value="productDetail?productId=${picture.productId}"/>
+    		<td><a href="${url}"><img id="toy" src="img/${picture.imageName}"></a></td>
 			</c:forEach>
 			</tr>
 			
@@ -46,7 +47,7 @@
 			<tr>
 			<th>Price</th>
 			<c:forEach var="price" items="${productList}">
-			<td>${price.price}</td>
+			<td><span style="color: #a52a2a"> $${price.price}</span></td>
 			</c:forEach>
 			</tr>
 			
