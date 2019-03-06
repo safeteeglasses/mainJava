@@ -1,4 +1,4 @@
-# Product Review Exercise
+# Product Review Exercise (Individual)
 
 ![Squirrel Cigar Parties For Dummies](etc/forDummies.png)
 

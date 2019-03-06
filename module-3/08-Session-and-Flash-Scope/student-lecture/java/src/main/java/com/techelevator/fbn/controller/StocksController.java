@@ -21,7 +21,6 @@ import com.techelevator.fbn.model.DollarAmount;
 import com.techelevator.fbn.model.Stock;
 
 @Controller
-@RequestMapping("/fbn")
 @SessionAttributes("stocks")
 public class StocksController {
 	@RequestMapping(path={"/stocks"}, method=RequestMethod.GET)
@@ -30,43 +29,61 @@ public class StocksController {
 		
 		map.put("stocks", stocks);
 		
-		return "fbn/stocksLandingPage";
+		return "stocks/stocksLandingPage";
 	}
 	
 	@RequestMapping(path={"/stockPurchase"}, method=RequestMethod.GET)
 	public String buyStockForm(){
-		return "fbn/stocksPurchasePage";
+		return "stocks/stocksPurchasePage";
 	}
 	
 	@RequestMapping(path={"/stockPurchase"}, method=RequestMethod.POST)
 	public String buyStock(@RequestParam String ticker, @RequestParam int shares){
 		System.out.println("You bought " + shares + " shares of " + ticker + "!");
-		return "fbn/stocksLandingPage";
+		return "stocks/stocksLandingPage";
 	}
 	
 	private List<Stock> getStocks() {
 		List<Stock> stocks = new ArrayList<Stock>();
-		Stock apple = new Stock();
-		apple.setTicker("AAPL");
-		apple.setName("Apple");
-		apple.setPrice(new DollarAmount(4400));
-		apple.setChange(0.5f);
-		stocks.add(apple);
+		String queryUrl = "http://finance.yahoo.com/d/quotes.csv?s=AAPL+GOOG+MSFT+CSCO+TSLA+NFLX&f=snabc1";
 
-		Stock goog = new Stock();
-		goog.setTicker("GOOG");
-		goog.setName("Google");
-		goog.setPrice(new DollarAmount(13400));
-		goog.setChange(0.9f);
-		stocks.add(goog);
-
-		Stock msft = new Stock();
-		msft.setTicker("MSFT");
-		msft.setName("Microsoft");
-		msft.setPrice(new DollarAmount(6400));
-		msft.setChange(-2.0f);
-		stocks.add(msft);
-
+		try {
+			URLConnection connection = new URL(queryUrl).openConnection();
+			connection.setRequestProperty("Accept-Charset", "UTF-8");
+			InputStream response = connection.getInputStream();
+			
+			Scanner input = new Scanner(response);
+			while(input.hasNextLine()) {
+				Stock stock = new Stock();
+				
+				String line = input.nextLine();
+				String[] nameParts = line.split("\"");
+				
+				stock.setTicker(nameParts[1]);
+				stock.setName(nameParts[3]);
+				
+				String[] parts = nameParts[4].split(",");
+				
+				if(!parts[1].equals("N/A")) {
+					String[] priceParts = parts[1].split("\\.");
+					int dollars = Integer.parseInt(priceParts[0]);
+					int cents = Integer.parseInt(priceParts[1].substring(0, 2));
+					DollarAmount price = new DollarAmount(dollars * 100 + cents);
+					stock.setPrice(price);
+				}
+				
+				if(!parts[3].equals("N/A")) {
+					float change = Float.parseFloat(parts[3]);
+					stock.setChange(change);
+				}
+				
+				stocks.add(stock);
+			}
+			input.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		return stocks;
 	}
 }
