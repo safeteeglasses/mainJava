@@ -22,13 +22,13 @@ import com.techelevator.fbn.model.Stock;
 
 @Controller
 @RequestMapping("/fbn")
-@SessionAttributes("thestocks")
+@SessionAttributes("stocks")
 public class StocksController {
 	@RequestMapping(path={"/stocks"}, method=RequestMethod.GET)
 	public String showStocksPage(ModelMap map){
-		List<Stock> thestocks = getStocks();
+		List<Stock> stocks = getStocks();
 		
-		map.put("stocks", thestocks);
+		map.put("stocks", stocks);
 		
 		return "fbn/stocksLandingPage";
 	}
