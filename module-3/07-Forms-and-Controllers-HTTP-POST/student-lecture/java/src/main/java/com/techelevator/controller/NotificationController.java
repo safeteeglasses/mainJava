@@ -58,8 +58,9 @@ public class NotificationController {
 	public String processNotificationSignupSubmission(@RequestParam String firstName,
 													 @RequestParam String lastName,
 													 @RequestParam String emailAddress,
-													 @RequestParam int age) throws FileNotFoundException, IOException {
-		
+													 @RequestParam int age) 
+															 throws FileNotFoundException, IOException {
+		// Use the model to update/insert the parameter data
 		try(FileOutputStream out = new FileOutputStream(getSignupLogFile(), true)) {
 			NotificationSignupDAO log = new NotificationSignupDAO(out);
 			log.saveNotificationSignup(firstName, lastName, age, emailAddress);
