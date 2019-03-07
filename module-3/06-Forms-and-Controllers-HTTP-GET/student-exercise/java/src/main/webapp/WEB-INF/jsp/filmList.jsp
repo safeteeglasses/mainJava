@@ -3,20 +3,34 @@
 <c:set var="pageTitle" value="All Films List"/>
 
 <%@include file="common/header.jspf"%>
-
-<c:url var="formAction" value="/filmList"/>
-<form method="GET" action="${formAction}"> 
-		<label for="maxLength">Maximum Length: </label>
-			<input type="text" name="maxLength" id="maxLength"/>
-		<label for="maxLength">Minimum Length: </label>
-			<input type="text" name="minLength" id="minLength"/>	
-			<select name="genre" id="genre">
-			<forEach items="${films}" var="category">
-				<option> ${category.genre}</option>
-			</select>
-			</forEach>	
-			<input type="submit" value="Submit"/>
 	
+	
+<c:url var="formAction" value="/filmList"/>
+	<form method="GET" action="${formAction}"> 
+		<label for="maxLength">Maximum Length:</label>
+			<input type="text" placeholder="Max" name="maxLength" id="maxLength"/>
+		<label for="maxLength">Minimum Length: </label>
+			<input type="text" placeholder="Min" name="minLength" id="minLength"/>	
+			<select name="genre" id="genre">
+			<option value="Action">Action</option>
+			<option value="Animation">Animation</option>
+			<option value="Children">Children</option>
+			<option value="Classics">Classics</option>
+			<option value="Comedy">Comedy</option>
+			<option value="Documentary">Documentary</option>
+			<option value="Drama">Drama</option>
+			<option value="Family">Family</option>
+			<option value="Foreign">Foreign</option>
+			<option value="Games">Games</option>
+			<option value="Horror">Horror</option>
+			<option value="Music">Music</option>
+			<option value="New">New</option>
+			<option value="Sci-Fi">Sci-Fi</option>
+			<option value="Sports">Sports</option>
+			<option value="Travel">Travel</option>
+			<option value="Mathmagical">Mathmagical</option>
+			</select>
+			<input type="submit" value="Submit"/>
 	</form>
 
 <table class="table">

@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<a href="actorSearch">Actor List</a>
+	<a href="filmSearch">Film Search</a>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><c:out value="${pageTitle}"/> - Get Exercises</title>
@@ -17,8 +20,11 @@
         .form-control {
             display: inline-block;
         }
+  		
     </style>
+    
 </head>
+	
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">

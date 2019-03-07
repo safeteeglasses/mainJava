@@ -17,7 +17,7 @@ public class ActorSearchController {
 	@Autowired
 	private ActorDao actorDao;
 
-	@RequestMapping("/")
+	@RequestMapping({"/", "/actorSearch"})
 	public String showSearchActorForm() {
 		return "actorList";
 	}

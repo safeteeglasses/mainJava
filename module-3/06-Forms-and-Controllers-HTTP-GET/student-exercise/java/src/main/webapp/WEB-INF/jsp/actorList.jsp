@@ -3,6 +3,7 @@
 <c:set var="pageTitle" value="All Actors List"/>
 
 <%@include file="common/header.jspf"%>
+	
 
 
 <c:url var="formAction" value="/actorList" />

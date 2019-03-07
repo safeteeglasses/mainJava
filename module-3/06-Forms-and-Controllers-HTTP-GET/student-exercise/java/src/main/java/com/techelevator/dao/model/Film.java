@@ -9,6 +9,7 @@ public class Film {
     private int releaseYear;
     private int length;
     private String rating;
+   
 	/**
 	 * @return the title
 	 */
