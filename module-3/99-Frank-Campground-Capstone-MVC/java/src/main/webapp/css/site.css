@@ -1,0 +1,26 @@
+body {
+    background-color : beige;
+    color : white;
+}
+
+.pageTitle {
+     font-size: 3em;
+    color: brown;
+	
+}
+#welcomeMsg {
+     font-size: 2em;
+    color: maroon;
+	
+}
+#chooser {
+	padding-top: 3em;
+	color: orange;
+}
+
+.copyright {
+	width : 800px;
+	color : brown;
+	padding-top: 4em;
+	text-align : left;
+}
