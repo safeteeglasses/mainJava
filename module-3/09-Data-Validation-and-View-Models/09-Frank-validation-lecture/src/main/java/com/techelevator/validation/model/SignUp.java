@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class SignUp {
 	
-	@NotBlank(message="Name is required")
+	@NotBlank(message="Name is required") //message is optional
 	private String name;
 	
 	@NotBlank(message="Email address is required")

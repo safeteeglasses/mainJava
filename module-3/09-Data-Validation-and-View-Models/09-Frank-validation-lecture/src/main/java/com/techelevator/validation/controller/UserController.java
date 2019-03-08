@@ -41,8 +41,9 @@ public class UserController {
 	@RequestMapping(path="/mailingList", method=RequestMethod.POST)
 	public String submitRegisterForm(
 			@Valid @ModelAttribute("SignUp") SignUp registerFormValues,
-			BindingResult result,
-			RedirectAttributes flash
+			
+			BindingResult result,		//object to hold the result of validation
+			RedirectAttributes flash	//define a flash object (exist only for the next request)
 	){
 		if(result.hasErrors()) {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "SignUp", result);
