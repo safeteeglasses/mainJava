@@ -29,6 +29,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="<c:url value="/"/>" class="navbar-brand">Validation Exercises</a>
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

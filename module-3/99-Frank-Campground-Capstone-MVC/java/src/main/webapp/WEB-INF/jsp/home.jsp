@@ -8,7 +8,9 @@
 </div>
 
 <div id="chooser">
-   	<a href="#">View Parks</a>
+<c:url var="parkListURL" value="/parkList"/>
+
+   	<a href="${parkListURL}">List Parks</a>
 </div>
 	
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
