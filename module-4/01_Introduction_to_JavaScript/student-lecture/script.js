@@ -13,8 +13,22 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const daysPerWeek = 7;
+  console.log(`There are ${daysPerWeek} in a week`)
   // Declares a variable those value can be changed
+  let daysPerMonth = 30;
+  console.log(`There are ${daysPerMonth} in a month`)
   // Declares a variable that will always be an array
+  const weekdays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ];
+  console.table(weekdays);
 }
 
 /**
@@ -73,14 +87,22 @@ function objects() {
       "Milton Waddams",
       "Samir Nagheenanajar",
       "Michael Bolton"
-    ]
+    ],
+    toString : function(){
+      return `${this.firstName}, ${this.lastName}, ${this.age}`
+    }
   };
 
   // Log the object
-
+console.log(person);
   // Log the first and last name
-
+console.log(person.toString());
+console.log(`${person.firstName}, ${person.lastName}`);
   // Log each employee
+console.table(person.employees);
+for(let i=0; i< person.employees.length; i++){
+  console.log(`${person.employees[i]}`);
+}
 }
 
 /*
@@ -141,4 +163,19 @@ function stringFunctions(value) {
         - trim()
         - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
     */
+}
+
+function arrayFunction() {
+  let stooges = [ 
+    "Moe",
+    "Larry",
+    "Curly"
+  ];
+  console.table(stooges);
+
+  stooges.push("Shemp");
+  console.table(stooges);
+
+  stooges.unshift("Curly Joe");
+  console.table(stooges);
 }
