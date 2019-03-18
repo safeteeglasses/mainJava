@@ -143,3 +143,39 @@ body {
 main div.poster {
   display: none;
 }
+@media only screen and  (min-width: 48em){
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav ul li {
+    width: 30%;
+    margin: inherit;
+  }
+  main div.poster {
+    display: block;
+    height: 200px;
+  }
+  div.poster img {
+    object-fit: cover;
+  }
+  .store-button {
+    width: 25%;
+  }
+}
+@media only screen and (min-width: 64em){
+body{
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+  grid-template-areas: 
+    " . header header nav nav . "
+    " . main main main main . "
+    " . order-now order-now store store . ";
+    grid-gap: 10px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+}
