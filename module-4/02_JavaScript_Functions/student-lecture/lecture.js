@@ -25,20 +25,24 @@ function printToConsole(value) {
  * Multiply two numbers together. But what happens of we don't pass
  * a value in? What happens if the value is not a number?
  *
- * @param {number} firstParameter the first parameter to multiply
- * @param {number} secondParameter the second parameter to multiply
+ * @param {number} x the first parameter to multiply
+ * @param {number} y the second parameter to multiply
  */
-
+function multiplyTogether(x,y){
+  return x*y;
+}
 /**
  * This version makes sure that no parameters are ever missing. If
  * someone calls this function without parameters, we default the
  * values to 0. However, it is impossible in JavaScript to prevent
  * someone from calling this function with data that is not a number.
  *
- * @param {number} [firstParameter=0] the first parameter to multiply
- * @param {number} [secondParameter=0] the second parameter to multiply
+ * @param {number} [x=0] the first parameter to multiply
+ * @param {number} [y=0] the second parameter to multiply
  */
-
+function multiplyTogether2(x=0,y=0){
+  return x*y;
+}
 /**
  * Scope is defined as where a variable is available to be used.
  *
@@ -75,7 +79,12 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+
+  return numbersToSum.reduce((sum, element) => {
+  return sum += element;
+  }
+  );
+
 }
 
 /**
@@ -86,4 +95,9 @@ function sumAllNumbers(numbersToSum) {
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+return numbersToFilter.filter((element) => {
+return element % 3 === 0;
+  }
+);
+}

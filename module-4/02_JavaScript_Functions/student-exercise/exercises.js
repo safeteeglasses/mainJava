@@ -43,7 +43,21 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
-
+function isAdmitted (gpa, satScore, recommendation) {
+  if(gpa > 4.0){
+    return true;
+  }
+  if(satScore > 1300){
+    return true;
+  }
+  if((gpa > 3.0)&& (recommendation === true)){
+    return true;
+  }
+  if((satScore > 1200) && (recommendation === true)){
+    return true;
+  }
+  return false;
+}
 /**
  * Write a function so that it takes an anonymous function and
  * uses that in `unfilteredArray` filter function. Return the result.
@@ -52,6 +66,9 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {number[]} the filtered array
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
+function useParameterToFilterArray(filterFunction) {
+  return unfilteredArray.filter((filterFunction))
+}
 
 /**
  * Write a function called makeNumber to take two strings
