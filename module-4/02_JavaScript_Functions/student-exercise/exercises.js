@@ -82,6 +82,10 @@ function useParameterToFilterArray(filterFunction) {
  * @param {string} [second=''] the second string of digits to concatenate
  * @returns {number} the resultant number
  */
+function makeNumber(first, second = '') {
+  let joinedString = first + second;
+  return parseFloat(joinedString);
+}
 
 /**
  * Write a function that takes an unknown number of parameters
@@ -90,12 +94,21 @@ function useParameterToFilterArray(filterFunction) {
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
-
+function addAll() {
+  return Array.from(arguments).reduce((sum, number) => {
+    return sum + number;
+  }, 0);
+}
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+function makeHappy(words) {
+  return words.map((word) => {
+    return 'Happy ' + word;
+  });
+}
 
 /*
  * Write and document a function called getFullAddressesOfProperties
