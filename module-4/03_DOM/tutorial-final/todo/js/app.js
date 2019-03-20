@@ -7,7 +7,7 @@ let todos = [];
 let pageTitle = '';
 
 function init() {
-  pageTitle = 'My Morning Routine';
+  pageTitle = 'My Daily Routine';
   todos = [{
       id: 1,
       task: 'Wake up',
@@ -69,10 +69,10 @@ function addPageTitle() {
 
 function addTodos() {
   const ul = document.createElement('ul');
-  todos.forEach((todo) => {
-    const li = document.createElement('li');
-    li.innerText = todo.task;
-    ul.appendChild(li);
+  todos.forEach((todo) => {                  // loop thru the todos array - call the current element todo
+    const li = document.createElement('li'); // create li tag
+    li.innerText = todo.task;                // assign the current array element to li tag
+    ul.appendChild(li);                      // add li to ul tag we created
   });
   todoList.appendChild(ul);
 }
@@ -80,6 +80,6 @@ function addTodos() {
 // setup our page title and tasks
 init();
 // // add page title to the DOM
-addPageTitle();
+addPageTitle(); // add the <h1> to the DOM
 // // add the task to the DOM
-addTodos();
+addTodos();     // add the ul and all it's li's to DOM

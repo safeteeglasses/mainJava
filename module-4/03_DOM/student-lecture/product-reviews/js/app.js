@@ -40,19 +40,30 @@ const reviews = [
  * once you have the element you can add the product name to the span.
  */
 function setPageTitle() {}
-
+const PageTitle = document.getElementById("page-title");
+PageTitle.querySelector(".name").innerText = name;
 /**
  * Add our product description to the page.
  */
 function setPageDescription() {}
-
+document.querySelector(".description").innerText = description;
 /**
  * I will display all of the reviews on the page.
  * I will loop over the array of reviews and use some helper functions
  * to create the elements needed for our markup and add them to the DOM
  */
-function displayReviews() {}
-
+function displayReviews() {
+const mainDiv = document.qetElementById('main');
+reviews.forEach((aReview) => {
+    const reviewDiv = document.createElement('div');
+    reviewDiv.setAttribute('class', 'review');
+    const paraElement = document.createElement('p');
+    paraElement.innerText = aReview.review;
+    reviewDiv.appendChild(paraElement);
+    mainDiv.appendChild(reviewDiv);
+  });
+  
+}
 /**
  * I will creating a new h4 element with the name of the reviewer and append it to
  * the parent element that is passed to me.
