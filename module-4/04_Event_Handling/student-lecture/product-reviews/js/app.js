@@ -58,10 +58,32 @@ function displayReview(review) {
   main.appendChild(tmpl);
 }
 
-
+document.addEventListener('DOMContentLoaded', () => {
 // set the product reviews page title
 setPageTitle();
 // set the product reviews page description
 setPageDescription();
 // display all of the product reviews on our page
 displayReviews();
+});
+
+// when the user clicks the description they can change it
+// show input box when they click it
+// get a reference to the element to manipulate
+const reviewDescription = document.querySelector('.description');
+reviewDescription.addEventListener('click',(event) => {
+  changeDescription(event.target) // call our function passing it the element that experienced the event
+});
+
+function changeDescription(reviewDescription){
+// get a reference to the element to manipulate
+// get the data from the input box
+// set the description field element to the data
+
+const textBox = reviewDescription.nextElementSibling;
+textBox.classList.remove('d-none');  // this will remove the do not display 
+reviewDescription.innerText = textBox.value;
+textBox.focus();
+
+
+}

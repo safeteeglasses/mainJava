@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   addPageTitle();
   addTodos();
 
-  const tasks = document.querySelectorAll('li');
+  const tasks = document.querySelectorAll('li'); // nodeList of Li's returned 
 
   tasks.forEach((task) => {
     // when you click on a task mark it completed
