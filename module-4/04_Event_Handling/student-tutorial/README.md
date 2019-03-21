@@ -42,7 +42,7 @@ Next you will loop over each of the tasks and add a click event listener to each
 ```javascript
 tasks.forEach((task) => {
   task.addEventListener('click', () => {
-    if( !task.hasAttribute('class', 'completed') ) {
+    if( !task.classList.contains('completed') ) {
 
     }
   })
@@ -54,7 +54,7 @@ If it's currently incomplete you can add the class `.completed` to the task (`<l
 ```javascript
 tasks.forEach((task) => {
   task.addEventListener('click', () => {
-    if( !task.hasAttribute('class', 'completed') ) {
+    if( !task.classList.contains('completed') ) {
         task.classList.add('completed')
         task.querySelector('i').classList.add('completed')
     }
@@ -71,7 +71,7 @@ To mark a task incomplete you are going to do something very similar. Since you 
 ```javascript
 tasks.forEach((task) => {
   task.addEventListener('click', () => {
-    if( !task.hasAttribute('class', 'completed') ) {
+    if( !task.classList.contains('completed') ) {
         task.classList.add('completed')
         task.querySelector('i').classList.add('completed')
     }
@@ -84,7 +84,7 @@ You will use the same approach you did before but this time you're going to list
 
 ```javascript
 task.addEventListener('dblclick',() => {
-  if( task.hasAttribute('class','completed') ) {
+  if( task.classList.contains('completed') ) {
     task.classList.remove('completed')
     task.querySelector('i').classList.remove('completed')
   }
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // when you click on a task mark it completed
     task.addEventListener('click', () => {
-      if( !task.hasAttribute('class', 'completed') ) {
+      if( !task.classList.contains('completed') ) {
         task.classList.add('completed')
         task.querySelector('i').classList.add('completed')
       }
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // when you double click a task remove the completed class
     task.addEventListener('dblclick',() => {
-      if( task.hasAttribute('class','completed') ) {
+      if( task.classList.contains('completed') ) {
         task.classList.remove('completed')
         task.querySelector('i').classList.remove('completed')
       }
