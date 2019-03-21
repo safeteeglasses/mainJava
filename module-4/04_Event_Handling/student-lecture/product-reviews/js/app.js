@@ -28,27 +28,36 @@ function setPageDescription() {
 }
 
 /**
- * I will use a template to display all of the reviews on our web page
+ * I will display all of the reviews in the reviews array
  */
 function displayReviews() {
   if ('content' in document.createElement('template')) {
-    const main = document.getElementById('main');
     reviews.forEach((review) => {
-      const tmpl = document.getElementById('review-template').content.cloneNode(true);
-      tmpl.querySelector('h4').innerHTML = review.reviewer;
-      tmpl.querySelector('h3').innerHTML = review.title;
-      tmpl.querySelector('p').innerHTML = review.review;
-      // there will always be 1 star because it is a part of the template
-      for (let i = 1; i < review.rating; ++i) {
-        const img = tmpl.querySelector('img').cloneNode();
-        tmpl.querySelector('.rating').appendChild(img);
-      }
-      main.appendChild(tmpl);
+      displayReview(review);
     });
   } else {
     console.error('Your browser does not support templates');
   }
 }
+
+/**
+ *
+ * @param {Object} review The review to display
+ */
+function displayReview(review) {
+  const main = document.getElementById('main');
+  const tmpl = document.getElementById('review-template').content.cloneNode(true);
+  tmpl.querySelector('h4').innerHTML = review.reviewer;
+  tmpl.querySelector('h3').innerHTML = review.title;
+  tmpl.querySelector('p').innerHTML = review.review;
+  // there will always be 1 star because it is a part of the template
+  for (let i = 1; i < review.rating; ++i) {
+    const img = tmpl.querySelector('img').cloneNode();
+    tmpl.querySelector('.rating').appendChild(img);
+  }
+  main.appendChild(tmpl);
+}
+
 
 // set the product reviews page title
 setPageTitle();
