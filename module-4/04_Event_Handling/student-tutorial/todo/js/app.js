@@ -4,7 +4,7 @@ let todos = [];
 let pageTitle = '';
 
 function init() {
-  pageTitle = 'My Morning Routine';
+  pageTitle = 'My Daily Routine';
   todos = [
     { id: 1, task: 'Wake up', completed: false },
     { id: 2, task: 'Brush Teeth', completed: false },
@@ -37,7 +37,41 @@ function addTodos() {
   });
   todoList.appendChild(ul);
 }
+document.addEventListener("DOMContentLoaded", () => {
 
-init();
-addPageTitle();
-addTodos();
+  init()
+  addPageTitle()
+  addTodos()
+
+  const tasks = document.querySelectorAll('li')
+
+  tasks.forEach((task) => {
+
+    // when you click on a task mark it completed
+    task.addEventListener('click', () => {
+      if( !task.hasAttribute('class', 'completed') ) {
+        task.classList.add('completed')
+        task.querySelector('i').classList.add('completed')
+      }
+    })
+
+    // when you double click a task remove the completed class
+    task.addEventListener('dblclick',() => {
+      if( task.hasAttribute('class','completed') ) {
+        task.classList.remove('completed')
+        task.querySelector('i').classList.remove('completed')
+      }
+    })
+
+  })
+
+  // mark all tasks as completed
+  const completeAll = document.getElementById('btnCompleteAll')
+  completeAll.addEventListener('click',() => {
+    tasks.forEach((task) => {
+      task.classList.add('completed')
+      task.querySelector('i').classList.add('completed')
+    })
+  })
+
+});
