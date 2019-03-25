@@ -9,7 +9,7 @@
 
         <div class="well-display">
             <div class="well">
-                <span class="amount">{{ averageRating }}</span>
+                <span class="amount">{{ averageRating }}</span> <!-- calling the averageRating method to get a value -->
                 Average Rating
             </div>
 
@@ -43,7 +43,7 @@
             <h4>{{ review.reviewer }}</h4>
             <div class="rating">
                 <img src="../assets/star.png" v-bind:title="review.rating + ' Star Review'" class="ratingStar" v-for="n in review.rating" />
-            </div>
+            </div>                  <!-- adding a title to image using v-bind:title -->                             <!-- give me the number of images indicated by the rating -->
             <h3>{{ review.title }}</h3>
 
             <p>{{ review.review }}</p>
@@ -91,14 +91,14 @@ export default {
         };
     },
     computed: {
-        averageRating(vm) {
+        averageRating(vm) { // vm is the component calling the method
             let sum = vm.reviews.reduce( (currentSum, review) => {
                 return currentSum + review.rating;
-            }, 0);
+            }, 0); // initial value of currentSum to be 0 rather than the value in the first element
             return sum / vm.reviews.length;
         },
         numberOfOneStarReviews(vm) {
-            return vm.numberOfReviews(vm.reviews, 1);
+            return vm.numberOfReviews(vm.reviews, 1); 
         },
         numberOfTwoStarReviews(vm) {
             return vm.numberOfReviews(vm.reviews, 2);
@@ -110,12 +110,12 @@ export default {
             return vm.numberOfReviews(vm.reviews, 4);
         },
         numberOfFiveStarReviews(vm) {
-            return vm.numberOfReviews(vm.reviews, 5);
-        },
+            return vm.numberOfReviews(vm.reviews, 5);// the number of reviews with rating 5
+        }, 
     },
     methods: {
         numberOfReviews(reviews, starType) {
-            return reviews.reduce( (currentCount, review ) => {
+            return reviews.reduce( (currentCount, review ) => { // currentCount is whatever the reduce creates
                 return currentCount + ( review.rating === starType ? 1 : 0);
             }, 0);
         }

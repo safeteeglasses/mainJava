@@ -2,7 +2,7 @@
     <div class="todo-list">
         <h1>My Daily Routine</h1>
         <ul>
-            <li v-for="todo in todos" v-bind:key="todo">{{todo}}</li>
+            <li v-for="anItem in todos" v-bind:key="anItem">{{anItem}}</li>
         </ul>
     </div>
 </template>
