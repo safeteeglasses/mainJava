@@ -1,4 +1,4 @@
- <!--  Sample Code with Inline Function Event Handling -->
+ <!--  Sample Code with Inline Function Event Handling 
 <template>
   <div id="app">
   <p> Sample Code with Inline Function Event Handling</p>
@@ -23,7 +23,7 @@ export default {
 };
 
 </script>
-
+-->
 <!-- Sample code with Method Event Handlers 
 <template>
   <div id="app">
@@ -52,11 +52,13 @@ export default {
   }
 };
 </script>
--->
+
 <!-- Sample code with Method Arguments 
-<p> Sample Code with Method Arguments</p>
+
  <template>
+ 
   <div id="app">
+    <p> Sample Code with Method Arguments</p>
     <a href="#" id="increase" class="btn" v-on:click="updateCounter(1)"
       >Increase</a
     >
@@ -82,7 +84,7 @@ export default {
   }
 };
 </script>
--->
+
 <!-- Sample code with Implicit Event object 
 <template>
   <div id="app">
@@ -112,8 +114,8 @@ export default {
   }
 };
 </script>
--->
-<!-- Sample Code with Explicit Event Object 
+
+<!-- Sample Code with Explicit Event Object -->
 <template>
   <div id="app">
     <p> Sample Code with Explicit Event Object</p>
@@ -143,7 +145,7 @@ export default {
   }
 };
 </script>
--->
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
