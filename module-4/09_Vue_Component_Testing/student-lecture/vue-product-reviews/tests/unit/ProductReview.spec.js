@@ -203,6 +203,36 @@ describe('ProductReview', () => {
       }
     ];
 
-    
+      it('Should return only count of one star reviews from numberOfOneStarReviews', () => {
+        wrapper.setData({reviews: testReviews});
+        wrapper.vm.numberOfOneStarReviews.should.equal(1);
+      });
+      it('Should return only count of two star reviews from numberOfOneStarReviews', () => {
+        wrapper.setData({reviews: testReviews});
+        wrapper.vm.numberOfTwoStarReviews.should.equal(2);
+      });
+      it('Should return only count of three star reviews from numberOfOneStarReviews', () => {
+        wrapper.setData({reviews: testReviews});
+        wrapper.vm.numberOfThreeStarReviews.should.equal(3);
+      });
+      it('Should return only count of four star reviews from numberOfOneStarReviews', () => {
+        wrapper.setData({reviews: testReviews});
+        wrapper.vm.numberOfFourStarReviews.should.equal(0);
+      });
+      it('Should return only count of five star reviews from numberOfOneStarReviews', () => {
+        wrapper.setData({reviews: testReviews});
+        wrapper.vm.numberOfFiveStarReviews.should.equal(2);
+      });
+      it('Should only have filtered reviews in filteredReviews', () => {
+        wrapper.setData({reviews: testReviews, filter: 2})
+        wrapper.vm.filteredReviews.length.should.equal(2);
+        wrapper.vm.filteredReviews[0].reviewer.should.equal('TEST3');
+        wrapper.vm.filteredReviews[1].reviewer.should.equal('TEST5');
+      });
+      it('should have all reviews in filteredReviews when filter is 0', () => {
+        wrapper.setData({reviews: testReviews, filter: 0})
+        wrapper.vm.filteredReviews.length.should.equal(8);
+        
+      })
   });
 });
