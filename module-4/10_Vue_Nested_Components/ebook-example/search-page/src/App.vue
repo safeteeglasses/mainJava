@@ -5,7 +5,7 @@
   <div id="app">
     <search-box
       search-url="https://vpic.nhtsa.dot.gov/api/vehicles/getmakeformanufacturer/"
-      v-on:search-results="handleResults">
+      v-on:search-results="handleResults"> <!-- when search-results event happens call handleResults method -->
     </search-box>
     <results-display v-bind:results="searchResults"></results-display>
   </div>
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      searchResults: { "Results": [] }
+      searchResults: { "Results": [] } // searchResults is an array
     }
   },
   methods: {

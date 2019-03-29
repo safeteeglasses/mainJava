@@ -232,7 +232,8 @@ describe('ProductReview', () => {
       it('should have all reviews in filteredReviews when filter is 0', () => {
         wrapper.setData({reviews: testReviews, filter: 0})
         wrapper.vm.filteredReviews.length.should.equal(8);
-        
-      })
+
+      });
+      
   });
 });

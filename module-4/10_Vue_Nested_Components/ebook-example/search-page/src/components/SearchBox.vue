@@ -2,7 +2,7 @@
 <!-- Vue Nested Components - SearchBox.vue Lecture Final      -->
 <!-------------------------------------------------------------->
 <template>
-    <form v-on:submit.prevent="performSearch">
+    <form v-on:submit.prevent="performSearch"> <!-- on submit don't do the default action, run performSearch method instead -->
         <input type="text" name="search" id="search" v-model="search">
         <button type="submit">Search</button>
     </form>
@@ -39,9 +39,11 @@ export default {
          * @returns {Promise} the promise from fetch for unit testing
          */
         performSearch() {
-            return fetch(this.searchUrl + this.search + '?format=json').then((response) => {
+            // go to the searchUrl API with the search value and the parameter to request data in json format
+            // .then - wait for the response from the API and then return the json data in the response
+           return fetch(this.searchUrl + this.search + '?format=json').then((response) => {
                 return response.json();
-            }).then((results) => {
+            }).then((results) => { // after we process the response - issue a custom event ($emit)
                 /**
                  * Contains search results as an object with `Results` that is
                  * an array of objects.
