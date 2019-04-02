@@ -6,13 +6,13 @@ let reviews = [];
 function loadReviews() {
   console.log("Load Reviews...");
 
-  fetch('data.json') 
-    .then((response) => {
-      return response.json();
+  fetch('data.json')              // go get the data from this source
+    .then((response) => {         // wait until data is retrieved
+      return response.json();     // convert data to json and return it
     })
-    .then((data) => {
-      reviews = data;
-      displayReviews();
+    .then((data) => {             // wait for the data to be converted to json
+      reviews = data;             // assign the data to reviews
+      displayReviews();           // run the displayReviews() method to get the date into the html
     })
     .catch((err) => console.error(err));
 }
