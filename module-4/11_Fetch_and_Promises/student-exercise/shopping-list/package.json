@@ -1,0 +1,15 @@
+{
+  "name": "shopping-list-exercise",
+  "version": "1.0.0",
+  "description": "This exercise will test your knowledge of The Fetch API & Promises ",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [],
+  "author": "Tech Elevator",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.1.4"
+  }
+}
