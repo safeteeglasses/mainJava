@@ -1,0 +1,12 @@
+[
+   {"task" : "Wake up", "completed":true}, 
+   {"task" : "Morning Movement", "completed":true}, 
+   {"task" : "Coffee", "completed":true}, 
+   {"task" : "Journal", "completed":true}, 
+   {"task" : "Shower & Get Dressed", "completed":false}, 
+   {"task" : "Drive to work", "completed":false}, 
+   {"task" : "Give Presentation", "completed":false}, 
+   {"task" : "Drive Home", "completed":false}, 
+   {"task" : "Eat Dinner", "completed":false}, 
+   {"task" : "Go to Sleep", "completed":false}
+]
