@@ -3,7 +3,7 @@ package com.techelevator.reviews.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(code=HttpStatus.NOT_FOUND)
+@ResponseStatus(code=HttpStatus.NOT_FOUND) // return this HTTP status from this method
 public class ProductReviewNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = 6974644855556556894L;

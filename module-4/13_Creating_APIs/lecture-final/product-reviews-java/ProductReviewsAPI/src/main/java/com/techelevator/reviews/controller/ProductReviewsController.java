@@ -19,9 +19,9 @@ import com.techelevator.reviews.exception.ProductReviewNotFoundException;
 import com.techelevator.reviews.model.ProductReview;
 
 
-@RestController
+@RestController // Tell Spring MVC this is a REST API controller
 @CrossOrigin
-@RequestMapping("/api/reviews")
+@RequestMapping("/api/reviews") // handle this path in the URL
 public class ProductReviewsController {
 	
 	private ProductReviewDao productReviewDAO;
@@ -30,12 +30,12 @@ public class ProductReviewsController {
 		this.productReviewDAO = productReviewDAO;
 	}
 
-	@GetMapping
+	@GetMapping // handle any GET requests for the URL path in @RequestMapping
 	public List<ProductReview> list() {
-		return productReviewDAO.list();
+		return productReviewDAO.list(); // a data object is returned from controller rather than a jsp name
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/{id}") // handle any GET requests with an id
 	public ProductReview read(@PathVariable int id) throws ProductReviewNotFoundException {
 		ProductReview productReview = productReviewDAO.read(id);
 		if( productReview != null ) {
@@ -45,18 +45,18 @@ public class ProductReviewsController {
 		}
 	}
 	
-	@PostMapping
+	@PostMapping // handle any POST requests for the URL path in @RequestMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public ProductReview create(@RequestBody ProductReview productReview) {
 		return productReviewDAO.create(productReview);
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/{id}") // handle any Put requests with an id
 	public ProductReview update(@RequestBody ProductReview productReview,@PathVariable int id) throws ProductReviewNotFoundException {
 		ProductReview requestedReview = productReviewDAO.read(id);
 		if( requestedReview != null ) {
 			return productReviewDAO.update(productReview);
-		} else {
+		} else { // if the entry is not found throw a custom exception
 			throw new ProductReviewNotFoundException(id,"Todo Not Found!");
 		}
 	}

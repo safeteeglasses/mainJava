@@ -21,9 +21,9 @@ public class ProductReviewDao implements IProductReviewDao {
 	
 	private Map<Integer,ProductReview> reviews = new HashMap<>();
 	private final String DEFAULT_AVATAR = "https://s3.amazonaws.com/uifaces/faces/twitter/osmanince/128.jpg";
-	
+	// the constructor will load JSON file into reviews map
 	public ProductReviewDao() throws JsonParseException, JsonMappingException, IOException {
-		loadJSON();
+		loadJSON(); // Load JSON file into reviews map
 	}
 
 	@Override
